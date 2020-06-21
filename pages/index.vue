@@ -22,6 +22,7 @@
         >
           GitHub
         </a>
+        <button @click="onClick">Click</button>
       </div>
     </div>
   </div>
@@ -34,6 +35,11 @@ import Logo from '~/components/Logo.vue'
 export default Vue.extend({
   components: {
     Logo,
+  },
+  methods: {
+    onClick() {
+      throw new Error('Click')
+    },
   },
 })
 </script>

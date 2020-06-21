@@ -57,5 +57,11 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    extend(config, { isClient }) {
+      if (isClient) {
+        config.devtool = 'hidden-source-map'
+      }
+    },
+  },
 }
