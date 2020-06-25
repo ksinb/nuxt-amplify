@@ -22,7 +22,38 @@
         >
           GitHub
         </a>
-        <button @click="onClick">Click</button>
+      </div>
+      <div class="content">
+        <div>
+          <input
+            id="jack"
+            v-model="checkedNames"
+            type="checkbox"
+            value="Jack"
+          />
+          <label for="jack">Jack</label>
+          <input
+            id="john"
+            v-model="checkedNames"
+            type="checkbox"
+            value="John"
+          />
+          <label for="john">John</label>
+          <input
+            id="mike"
+            v-model="checkedNames"
+            type="checkbox"
+            value="Mike"
+          />
+          <label for="mike">Mike</label>
+        </div>
+        <div>
+          <span>Checked names: {{ checkedNames }}</span>
+        </div>
+        <div>
+          <button @click="onClick">Click</button>
+          <button @click="onClick2">Click2</button>
+        </div>
       </div>
     </div>
   </div>
@@ -36,9 +67,17 @@ export default Vue.extend({
   components: {
     Logo,
   },
+  data() {
+    return {
+      checkedNames: [],
+    }
+  },
   methods: {
     onClick() {
       throw new Error('Click')
+    },
+    onClick2() {
+      console.log([1, 2, 3].includes(1))
     },
   },
 })
