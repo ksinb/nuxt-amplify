@@ -77,6 +77,7 @@ export default Vue.extend({
       throw new Error('Click')
     },
     onClick2() {
+      console.log([1, 2, 3].find((item) => item % 2 === 0))
       console.log([1, 2, 3].includes(1))
     },
   },
